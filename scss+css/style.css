@@ -137,6 +137,7 @@ img {
 }
 @media (max-width: 426px) {
   .menu__list {
+    padding-right: 0;
     justify-content: center;
   }
 }
