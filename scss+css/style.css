@@ -136,6 +136,9 @@ img {
 }
 
 @media (max-width: 426px) {
+  .header__menu {
+    padding-right: 0;
+  }
   .menu__list {
     justify-content: space-between;
     padding-left: 20px;
