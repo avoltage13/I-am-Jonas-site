@@ -117,9 +117,6 @@ img {
   display: flex;
   flex-wrap: wrap;
   justify-content: end;
-  font-size: 1.125rem;
-  line-height: 1.5;
-  letter-spacing: 0.01125rem;
   -moz-column-gap: 40px;
        column-gap: 40px;
 }
@@ -130,22 +127,25 @@ img {
   }
 }
 
-@media (max-width: 831px) {
-  .menu__list {
-    font-size: 1.25rem;
-  }
-}
-@media (max-width: 426px) {
-  .menu__list {
-    padding-right: 0;
-    justify-content: center;
-  }
-}
-.menu__link {
+.menu__button {
+  background-color: #ffffff;
   color: #525252;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  letter-spacing: 0.01125rem;
 }
 
-.menu__link:hover {
+@media (max-width: 426px) {
+  .menu__list {
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .menu__button {
+    font-size: 1.375rem;
+  }
+}
+.menu__button:hover {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.219);
   text-decoration: underline;
 }
@@ -172,10 +172,11 @@ img {
     letter-spacing: calc(0.06875rem + 0.09125 * ((100vw - 20rem) / 70));
   }
 }
-.main__title span {
+.main__title :nth-child(1) {
   white-space: nowrap;
 }
-.main__title p {
+.main__title :nth-child(2) {
+  display: inline-block;
   color: #757575;
 }
 
@@ -236,6 +237,11 @@ img {
     gap: calc(12px + 12 * ((100vw - 320px) / 1120));
   }
 }
+.images-main__column img {
+  max-height: 38.25rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 
 @media (max-width: 831px) {
   .images__title {
@@ -255,15 +261,16 @@ img {
   font-size: 1.125rem;
   letter-spacing: 0.0375rem;
   line-height: 1.44;
-  padding: 24px 24px 20px 24px;
+  padding: 24px 24px 24px 24px;
   background-color: #f7f7f7;
   border-bottom: 5px solid rgb(255, 255, 255);
   border-bottom-left-radius: 22px;
   border-bottom-right-radius: 22px;
 }
-.image__name p {
-  margin-top: 4px;
+.image__name span {
+  display: block;
   color: #757575;
+  margin-top: 0px;
 }
 
 .about__content {
@@ -771,7 +778,7 @@ img {
   position: relative;
   top: -110px;
   margin: 0 auto;
-  width: 1248px;
+  width: 78rem;
   display: block;
   border: 1px solid #f0f0f0;
 }
@@ -782,7 +789,7 @@ img {
 }
 @media (max-width: 1440px) {
   .footer__line {
-    width: calc(220px + 1028 * ((100vw - 320px) / 1120));
+    width: calc(13.75rem + 64.25 * ((100vw - 20rem) / 70));
   }
 }
 

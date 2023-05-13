@@ -1,20 +1,21 @@
 @import "nullstyle.scss";
 
-//REM
+// REM
 @function rem($value) {
     $remValue: ($value / 16) + rem;	
     @return $remValue;
 }
-//EM
+// EM
 @function em($value) {
     $emValue: ($value / 16) + em;	
     @return $emValue;
 }
-//REM+EM w/0 rem,em
+// REM+EM w/0 rem,em
 @function rem-alt($value) {
     $rem0Value: ($value / 16);	
     @return $rem0Value;
 }
+
 // Adaptiv
 $maxWidth: 1920;
 $maxWidthContainer: 1440;
@@ -66,7 +67,6 @@ $maxWidthContainerRem: 90;
     }
 }
 /*_________________________*/
-
 body{
     font-family: "Inter";
     font-weight: 400;
@@ -113,27 +113,28 @@ img{
     display: flex;
     flex-wrap: wrap;
     justify-content: end;
-    font-size: rem(18);
-    line-height: 1.5;
-    letter-spacing: rem(0.18);
     @include av("column-gap",40,20,1);
-}
-@media (max-width: 831px) {
-    .menu__list{
-        font-size: rem(20);
-    }
-}
-@media (max-width: 426px) {
-    .menu__list {
-        justify-content: center;
-    }
 }
 .menu__item {
 }
-.menu__link {
+.menu__button {
+    background-color: #ffffff;
     color: #525252;
+    font-size: rem(18);
+    line-height: 1.5;
+    letter-spacing: rem(0.18);
 }
-.menu__link:hover{
+@media (max-width: 426px) {
+    .menu__list {
+        justify-content: space-between;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .menu__button {
+        font-size: rem(22);
+    }
+}
+.menu__button:hover{
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.219);
     text-decoration: underline;
 }
@@ -156,10 +157,11 @@ img{
     line-height: 1.15;
     @include av(font-size,rem-alt(64),rem-alt(28),1r);
     @include av(letter-spacing,rem-alt(2.56),rem-alt(1.1),1r);
-    span{
+    :nth-child(1) {
         white-space: nowrap;
     }
-    p{
+    :nth-child(2) {
+        display: inline-block;
         color: #757575;
     }
 }
@@ -201,7 +203,11 @@ img{
 .images-main__column{
     display: flex;
     flex-direction: column;
-    @include av(gap,24,12,1)
+    @include av(gap,24,12,1);
+    img {
+        max-height: rem(612);
+        object-fit: cover;
+    }
 }
 @media (max-width: 831px){
     .images__title {
@@ -223,14 +229,15 @@ img{
     font-size: rem(18);
     letter-spacing: rem(0.6);
     line-height: 1.44;
-    padding: 24px 24px 20px 24px;
+    padding: 24px 24px 24px 24px;
     background-color: #f7f7f7;
     border-bottom: 5px solid rgb(255, 255, 255);
     border-bottom-left-radius: 22px;
     border-bottom-right-radius: 22px;
-    p{
-        margin-top: 4px;
+    span{
+        display: block;
         color: #757575;
+        margin-top: 0px;
     }
 }
 .about__me {
@@ -635,7 +642,7 @@ img{
     position: relative;
     @include av(top,-110,-55,1);
     margin: 0 auto;
-    @include av(width,1248,220,1);
+    @include av(width,rem-alt(1248),rem-alt(220),1r);
     display: block;
     border: 1px solid #f0f0f0;
 }
