@@ -142,7 +142,7 @@ img {
     padding-right: 20px;
   }
   .menu__button {
-    font-size: 1.375rem;
+    font-size: 1.25rem;
   }
 }
 .menu__button:hover {
@@ -796,5 +796,19 @@ img {
 @media (max-width: 861px) {
   .footer__line {
     display: none;
+  }
+}
+@media (pointer: coarse) {
+  [class*=__link]:hover {
+    text-decoration: none;
+    text-shadow: none;
+  }
+  [class*=__button]:hover {
+    text-decoration: none;
+    text-shadow: none;
+  }
+  .footer__menu [class*=__link]:hover {
+    text-decoration: none;
+    text-shadow: none;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -24,7 +24,7 @@ document.addEventListener("click", (navigation) => {
         scrollToElement('images__title');
     }
     if (navigation.target.matches('.button-about')) {
-        scrollToElement('about__text');
+        scrollToElement('about__title');
     }
     if (navigation.target.matches('.button-contact')) {
         scrollToElement('email');

@@ -91,15 +91,13 @@ img{
 .header {
 }
 .header__container {
-
 }
-
 .header__menu {
     min-height: rem(76);
     align-items: center;
     padding-right: 7.619048%;
     padding-top: 15px;
-    @include av(padding-bottom,152,30,1)
+    @include av(padding-bottom,152,30,1);
 }
 @media (max-width: 550px){
     .header__menu {
@@ -131,14 +129,13 @@ img{
         padding-right: 20px;
     }
     .menu__button {
-        font-size: rem(22);
+        font-size: rem(20);
     }
 }
 .menu__button:hover{
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.219);
     text-decoration: underline;
 }
-
 .page{
     flex: 1 1 auto;
 }
@@ -186,7 +183,6 @@ img{
 }
 .images-main {
 }
-
 .images__title {
     font-size: rem(16);
     letter-spacing: rem(0.54);
@@ -649,5 +645,21 @@ img{
 @media (max-width: 861px) {
     .footer__line {
         display: none;
+    }
+}
+@media (pointer: coarse) {
+    [class*=__link]:hover {
+        text-decoration: none;
+        text-shadow: none;
+        }
+    [class*=__button]:hover {
+        text-decoration: none;
+        text-shadow: none;
+    }
+    .footer__menu {
+        [class*=__link]:hover {
+            text-decoration: none;
+            text-shadow: none;
+            }
     }
 }
