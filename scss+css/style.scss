@@ -87,6 +87,9 @@ img{
     margin: 0 auto;
     padding: 0 15px;
 }
+[class*=__button] {
+    background-color: transparent;
+}
 
 .header {
 }
@@ -116,7 +119,6 @@ img{
 .menu__item {
 }
 .menu__button {
-    background-color: #ffffff;
     color: #525252;
     font-size: rem(18);
     line-height: 1.5;
@@ -554,15 +556,15 @@ img{
         flex-direction: row;
         @include av(gap,32,16,1);
     }
-    [class*=__item]:not([class=copyright__item],[class=other__item]) {
+    [class*=__item]:not([class=copyright__item],[class=other__item]), [class*=__button] {
         font-size: rem(20);
         line-height: 1.5;
         letter-spacing: rem(0.1);
     }
-    [class*=__link] {
+    [class*=__link], [class*=__button]  {
         color: #000000;
     }
-    [class*=__link]:hover {
+    [class*=__link]:hover, [class*=__button]:hover {
         text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.219);
         text-decoration: underline;
     }
@@ -665,4 +667,59 @@ img{
             text-shadow: none;
             }
     }
+}
+.gotop__arrow {
+    display: none;
+    position: fixed;
+    height: rem(60);
+    width: rem(60);
+    right: 3%;
+    bottom: 33.33%;
+    transform: translateX(250%);
+}
+@media (max-width: 426px) {
+    .gotop__arrow {
+        height: rem(50);
+        width: rem(50);
+        right: 2%;
+        bottom: 2%;
+    }
+}
+.gotop__arrow--show {
+    display: block;
+    animation: showArrow 300ms forwards 300ms;
+}
+@keyframes showArrow {
+    0% {transform: translateX(250%);}
+    100% {transform: translateY(0);}
+}
+.gotop__arrow--hide {
+    display: block;
+    animation: hideArrow 300ms forwards;
+}
+@keyframes hideArrow {
+    0% {transform: translateY(0);}
+    100% {transform: translateX(250%);}
+}
+.arrow__button {
+    border-radius: 50%;
+    background-color: #ffffff63;
+}
+
+.mobile__navigation {
+}
+.bar__icon {
+    display: none;
+    position: fixed;
+    background-color: #525252a9;
+    flex-direction: column;
+    bottom: 0;
+    left: 0;
+    height: rem(60);
+    width: rem(60);
+}
+.bar__wrapper {
+
+}
+.bar__menu {
 }

@@ -94,6 +94,10 @@ img {
   padding: 0 15px;
 }
 
+[class*=__button] {
+  background-color: transparent;
+}
+
 .header__menu {
   min-height: 4.75rem;
   align-items: center;
@@ -128,7 +132,6 @@ img {
 }
 
 .menu__button {
-  background-color: #ffffff;
   color: #525252;
   font-size: 1.125rem;
   line-height: 1.5;
@@ -717,15 +720,15 @@ img {
     gap: calc(16px + 16 * ((100vw - 320px) / 1120));
   }
 }
-.footer__menu [class*=__item]:not([class=copyright__item], [class=other__item]) {
+.footer__menu [class*=__item]:not([class=copyright__item], [class=other__item]), .footer__menu [class*=__button] {
   font-size: 1.25rem;
   line-height: 1.5;
   letter-spacing: 0.00625rem;
 }
-.footer__menu [class*=__link] {
+.footer__menu [class*=__link], .footer__menu [class*=__button] {
   color: #000000;
 }
-.footer__menu [class*=__link]:hover {
+.footer__menu [class*=__link]:hover, .footer__menu [class*=__button]:hover {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.219);
   text-decoration: underline;
 }
@@ -814,4 +817,63 @@ img {
     text-decoration: none;
     text-shadow: none;
   }
+}
+.gotop__arrow {
+  display: none;
+  position: fixed;
+  height: 3.75rem;
+  width: 3.75rem;
+  right: 3%;
+  bottom: 33.33%;
+  transform: translateX(250%);
+}
+
+@media (max-width: 426px) {
+  .gotop__arrow {
+    height: 3.125rem;
+    width: 3.125rem;
+    right: 2%;
+    bottom: 2%;
+  }
+}
+.gotop__arrow--show {
+  display: block;
+  animation: showArrow 300ms forwards 300ms;
+}
+
+@keyframes showArrow {
+  0% {
+    transform: translateX(250%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.gotop__arrow--hide {
+  display: block;
+  animation: hideArrow 300ms forwards;
+}
+
+@keyframes hideArrow {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateX(250%);
+  }
+}
+.arrow__button {
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3882352941);
+}
+
+.bar__icon {
+  display: none;
+  position: fixed;
+  background-color: rgba(82, 82, 82, 0.662745098);
+  flex-direction: column;
+  bottom: 0;
+  left: 0;
+  height: 3.75rem;
+  width: 3.75rem;
 }/*# sourceMappingURL=style.css.map */
