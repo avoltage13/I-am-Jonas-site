@@ -49,7 +49,7 @@ window.addEventListener('scroll', function () {
 function trackScroll() {
     const currentScrollPos = window.scrollY;
     const coord = document.documentElement.clientHeight;
-    if ((currentScrollPos > coord) && (Math.abs(currentScrollPos - prevScrollPos) >= 250)) {
+    if ((currentScrollPos > coord) && (Math.abs(currentScrollPos - prevScrollPos) >= 450)) {
         upBtn.classList.add("gotop__arrow--show");
     }
     else {
@@ -60,7 +60,7 @@ function trackScroll() {
 function checkScrollPos() {
     const currentScrollPos = window.scrollY;
     const coord = document.documentElement.clientHeight;
-    if ((currentScrollPos !== prevScrollPos) && (Math.abs(currentScrollPos - prevScrollPos) >= 250) && (currentScrollPos > coord)) {
+    if ((currentScrollPos !== prevScrollPos) && (Math.abs(currentScrollPos - prevScrollPos) >= 450) && (currentScrollPos > coord)) {
         upBtn.classList.remove("gotop__arrow--show");
         upBtn.classList.add("gotop__arrow--hide");
     }
