@@ -819,12 +819,13 @@ img {
   }
 }
 .gotop__arrow {
-  display: none;
+  display: block;
   position: fixed;
   height: 3.75rem;
   width: 3.75rem;
   right: 3%;
   bottom: 33.33%;
+  transition: transform 300ms ease-in-out;
   transform: translateX(250%);
 }
 
@@ -837,31 +838,9 @@ img {
   }
 }
 .gotop__arrow--show {
-  display: block;
-  animation: showArrow 300ms forwards 300ms;
+  transform: translateY(0);
 }
 
-@keyframes showArrow {
-  0% {
-    transform: translateX(250%);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-.gotop__arrow--hide {
-  display: block;
-  animation: hideArrow 300ms forwards;
-}
-
-@keyframes hideArrow {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateX(250%);
-  }
-}
 .arrow__button {
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.3882352941);

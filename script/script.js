@@ -1,4 +1,3 @@
-
 "use strict";
 //_________________________________________________
 
@@ -40,6 +39,7 @@ document.addEventListener("click", (navigation) => {
 const upBtn = document.querySelector('.gotop__arrow');
 let prevScrollPos = window.scrollY
 let timeoutId;
+
 window.addEventListener("scroll", trackScroll);
 window.addEventListener('scroll', function () {
     clearTimeout(timeoutId);
@@ -53,19 +53,15 @@ function trackScroll() {
         upBtn.classList.add("gotop__arrow--show");
     }
     else {
-        upBtn.classList.remove("gotop__arrow--hide");
         upBtn.classList.remove("gotop__arrow--show");
-}};
+    }
+}
 
 function checkScrollPos() {
     const currentScrollPos = window.scrollY;
     const coord = document.documentElement.clientHeight;
-    if ((currentScrollPos !== prevScrollPos) && (Math.abs(currentScrollPos - prevScrollPos) >= 450) && (currentScrollPos > coord)) {
+    if ((currentScrollPos !== prevScrollPos) && (currentScrollPos > coord)) {
         upBtn.classList.remove("gotop__arrow--show");
-        upBtn.classList.add("gotop__arrow--hide");
-    }
-    else {
-        upBtn.classList.remove("gotop__arrow--hide");
     }
     prevScrollPos = currentScrollPos;
     timeoutId = setTimeout(checkScrollPos, 2000);
@@ -73,7 +69,7 @@ function checkScrollPos() {
 
 upBtn.addEventListener("click", function goTop() {
     if (window.scrollY > 0) {
-        upBtn.classList.add("gotop__arrow--hide");
+        upBtn.classList.remove("gotop__arrow--show");
         window.scrollBy(0, -60);
         setTimeout(goTop, 0);
     }
