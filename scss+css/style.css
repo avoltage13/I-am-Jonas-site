@@ -25,7 +25,7 @@ html, body {
   width: 100%;
   font-size: 100%;
   line-height: 1;
-  font-size: 16px;
+  font-size: 1em;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -741,6 +741,7 @@ img {
   font-size: 0.875rem;
   line-height: 1.5;
   letter-spacing: 0.021875rem;
+  white-space: nowrap;
 }
 
 .copyright {
@@ -759,25 +760,35 @@ img {
 }
 
 @media (max-width: 861px) {
-  .footer__menu {
-    grid: 1fr 18%/repeat(3, 1fr);
-  }
-  .footer__menu .copyright {
-    grid-column: span 3;
-    grid-row: 2/2;
-  }
-  .footer__menu [class*=__items]:not([class=copyright__items]) {
-    justify-content: space-between;
-    flex-direction: column;
-    text-align: center;
-  }
-  .footer__menu .copyright__items {
-    justify-content: center;
+  .footer__menu [class*=__items] {
+    flex-wrap: nowrap;
+    white-space: nowrap;
   }
 }
-@media (max-width: 366px) {
-  .copyright__items li {
-    margin: 0 -5px -5px -5px;
+@media (max-width: 767px) {
+  .footer__menu {
+    grid: repeat(3, 1fr)/repeat(3, 1fr);
+  }
+  .footer__menu [class*=__items]:not([class=copyright__items]) {
+    justify-content: center;
+    flex-direction: row;
+    text-align: start;
+  }
+  .footer__nav {
+    grid-column: span 3;
+  }
+  .media {
+    grid-column: span 3;
+  }
+  .other {
+    grid-column: span 3;
+  }
+  .copyright {
+    grid-column: span 3;
+  }
+  .copyright__items {
+    flex-direction: row;
+    justify-content: center;
   }
 }
 .footer__line {
@@ -821,18 +832,19 @@ img {
 .gotop__arrow {
   display: block;
   position: fixed;
-  height: 3.75rem;
-  width: 3.75rem;
+  height: 60px;
+  width: 60px;
   right: 3%;
   bottom: 33.33%;
   transition: transform 300ms ease-in-out;
   transform: translateX(250%);
+  z-index: 1;
 }
 
-@media (max-width: 426px) {
+@media (max-width: 769px) {
   .gotop__arrow {
-    height: 3.125rem;
-    width: 3.125rem;
+    height: 50px;
+    width: 50px;
     right: 2%;
   }
 }
@@ -843,15 +855,4 @@ img {
 .arrow__button {
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.3882352941);
-}
-
-.bar__icon {
-  display: none;
-  position: fixed;
-  background-color: rgba(82, 82, 82, 0.662745098);
-  flex-direction: column;
-  bottom: 0;
-  left: 0;
-  height: 3.75rem;
-  width: 3.75rem;
 }/*# sourceMappingURL=style.css.map */
