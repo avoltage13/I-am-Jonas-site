@@ -68,16 +68,20 @@ $maxWidthContainerRem: 90;
     }
 }
 /*_________________________*/
-body{
+body {
     font-family: "Inter";
     font-weight: 400;
     background-color: #ffffff;
 }
-img{
+picture {
     height: auto;
     width: 100%;
 }
-.wrapper{
+img {
+    height: auto;
+    width: 100%;
+}
+.wrapper {
     min-height: 100%;
     display: flex;
     flex-direction: column;
